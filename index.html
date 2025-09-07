@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pomodoro</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <header class="head">
+        <h1>⏳ Pomodoro</h1>
+      </header>
+
+      <!-- Display -->
+      <div id="timerDisplay" class="timer bounce">25:00</div>
+      <p id="phaseText" class="phase">📚 Fokus Belajar</p>
+
+      <!-- Progress / Laps -->
+      <div class="progress">
+        <div>
+          Putaran: <strong><span id="lapsDone">0</span>/<span id="lapsTotal">4</span></strong>
+        </div>
+        <div class="bar">
+          <div id="barFill" class="fill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button id="startBtn" class="btn primary">▶ Start</button>
+        <button id="pauseBtn" class="btn danger" disabled>⏸ Pause</button>
+        <button id="resetBtn" class="btn">🔄 Reset</button>
+      </div>
+
+      <!-- Settings -->
+      <div class="settings">
+        <div class="field">
+          <label for="workInput">⏱ Kerja (menit)</label>
+          <input type="number" id="workInput" min="1" value="25"/>
+        </div>
+        <div class="field">
+          <label for="breakInput">🛌 Istirahat (menit)</label>
+          <input type="number" id="breakInput" min="1" value="5"/>
+        </div>
+        <div class="field">
+          <label for="lapsInput">🔁 Putaran</label>
+          <input type="number" id="lapsInput" min="1" value="4"/>
+        </div>
+        <button id="applyBtn" class="btn soft">✔️ Terapkan</button>
+      </div>
+
+      <!-- Runtime Info -->
+      <div class="runtime">
+        <div>Mulai: <span id="startStamp">—</span></div>
+        <div>Selesai: <span id="endStamp">—</span></div>
+        <div>Durasi total: <span id="totalDuration">—</span></div>
+      </div>
+
+      <!-- Message -->
+      <div id="message" class="message hidden"></div>
+
+      <!-- History -->
+      <details class="history">
+        <summary>🗂 Riwayat Sesi</summary>
+        <ul id="historyList" class="list"></ul>
+      </details>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
